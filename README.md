@@ -10,7 +10,13 @@ This project is a simple application that allows users to:
 
 •	Send SMS notifications using a third-party SMS gateway API (like Twilio)
 
-Features
+This part of the project runs a scheduled Cron job that:
+•	Checks all stored events every hour (or custom schedule)
+•	Filters events occurring within the next 24 hours
+•	Sends SMS reminders to the associated phone numbers using your SMS API (like Twilio)
+
+
+## Features
 1.	Google OAuth 2.0 authentication
 
 2.	add, view, edit, and delete local events
@@ -18,14 +24,19 @@ Features
 3.	Send SMS reminders or confirmations for events
 
 simple, clean, modular code structure
- Tech Stack
+
+created helpers and libraries 
+
+ ##Tech Stack
+ Framework codeigniter 3.1
+ 
 Backend: PHP Mysql , Codeigniter
 
 Frontend: Bootstrap
 
 Authentication: Google OAuth 2.0
 
-SMS API: Twilio / Nexmo / other SMS provider
+SMS API: Twilio
 
 Database: MySql
 
@@ -88,4 +99,7 @@ PUT /events/:id — Update event
 DELETE /events/:id — Remove event
 
 POST /send-sms — Send SMS manually
+
+
+
 
